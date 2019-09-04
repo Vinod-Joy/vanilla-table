@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>
+      Tables
+    </title>
+    <script src="../js/hptables.js"></script>
+  </head>
+  <body>
+    <h3>Server Profiles</h3>
+    <div id="table-here">
+    </div>
+    <script>
+      var tableContainer = document.getElementById("table-here");
+      var table = initTable(tableContainer , "1000px" , "400px");
+      addHeaders(table, [{name:'Id', width: "50px", sortable:true},
+                        {name:'Sever Profile Name', width: "300px" , sortable:true},
+                        {name:'State' , width : "100px" , type: 'stateColor', states : {'Active' : '#00ff00' , 'Critical' : '#ff0000' , 'Warning' : '#ffff00'}},
+                        {name:'Server Hardware' , width : "300px" , sortable:true},
+                        {name:'Enclosure Name' , width : "250px" , sortable:true}]);
+      addEntries(table, [{'Id': 1, 'Sever Profile Name': "Server Profile 1" , 'State' : 'Active' , 'Server Hardware' : "Server Hw 1" , 'Enclosure Name': "Enclosure 1"},
+                        {'Id': 2, 'Sever Profile Name': "Server Profile 2" , 'State' : 'Active' , 'Server Hardware' : "Server Hw 2" , 'Enclosure Name': "Enclosure 1"},
+                        {'Id': 3, 'Sever Profile Name': "Server Profile 3" , 'State' : 'Active' , 'Server Hardware' : "Server Hw 3" , 'Enclosure Name': "Enclosure 1"},
+                        {'Id': 4, 'Sever Profile Name': "Server Profile 4" , 'State' : 'Warning' , 'Server Hardware' : "Server Hw 4" , 'Enclosure Name': "Enclosure 1"},
+                        {'Id': 5, 'Sever Profile Name': "Server Profile 5" , 'State' : '??' , 'Server Hardware' : "Server Hw 5" , 'Enclosure Name': "Enclosure 1"},
+                        {'Id': 6, 'Sever Profile Name': "Server Profile 6" , 'State' : 'Critical' , 'Server Hardware' : "Server Hw 6" , 'Enclosure Name': "Enclosure 1"}])
+
+    </script>
+  </body>
+</html>
